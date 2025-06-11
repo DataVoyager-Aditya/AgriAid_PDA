@@ -318,5 +318,6 @@ def sitemap():
 
 
 if __name__ == '__main__':
-    print(f"🚀 Starting AgriAid server with {len(models_dict)} models loaded...")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Railway sets PORT environment variable
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
