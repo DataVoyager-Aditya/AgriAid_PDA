@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Services - AgriAid{% endblock %}
+
+{% block content %}
+<section class="services-hero py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+                <br><br>
+                <h1 class="display-4 fw-bold mb-4">Our Services</h1>
+                <p class="lead">
+                    Comprehensive AI-powered solutions for crop disease detection and management
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-grid py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Disease Detection</h3>
+                    <p>Upload an image of your crop and get instant AI-powered disease diagnosis with high accuracy. Our advanced algorithms can identify multiple diseases across 5 major crops.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check text-success me-2"></i>98.4% accuracy rate</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Instant results</li>
+                        <li><i class="fas fa-check text-success me-2"></i>5 major crops supported</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Multiple disease detection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <h3>Treatment Recommendations</h3>
+                    <p>Receive detailed treatment plans including organic solutions, chemical options, and prevention strategies tailored to your specific crop and disease.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check text-success me-2"></i>Organic treatment options</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Chemical solutions with dosages</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Prevention strategies</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Crop-specific recommendations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile-Friendly Platform</h3>
+                    <p>Access AgriAid from any device - smartphone, tablet, or computer. Our responsive design works perfectly in rural areas with basic internet connectivity.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check text-success me-2"></i>Works on all devices</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Optimized for slow internet</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Offline-ready features</li>
+                        <li><i class="fas fa-check text-success me-2"></i>User-friendly interface</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Expert Support</h3>
+                    <p>Get assistance from agricultural experts and technical support team. We're here to help you make the most of our platform and improve your farming practices.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check text-success me-2"></i>Expert consultation</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Technical support</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Training resources</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Community forum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="supported-crops py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Supported Crops & Diseases</h2>
+                <p class="lead text-muted">
+                    Comprehensive disease detection for India's major agricultural crops
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="crop-service-card">
+                    <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Wheat" class="crop-service-image">
+                    <h4>Wheat</h4>
+                    <ul class="disease-list">
+                        <li>Brown Rust (Leaf Rust)</li>
+                        <li>Yellow Rust (Stripe Rust)</li>
+                        <li>Healthy Crop Detection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="crop-service-card">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Rice" class="crop-service-image">
+                    <h4>Rice</h4>
+                    <ul class="disease-list">
+                        <li>Brown Spot</li>
+                        <li>Leaf Blast</li>
+                        <li>Neck Blast</li>
+                        <li>Healthy Crop Detection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="crop-service-card">
+                    <img src= "https://i.ibb.co/73YxpH0/Chat-GPT-Image-Jun-11-2025-12-56-13-PM.png" 
+                         alt="Corn" class="crop-service-image">
+                    <h4>Corn</h4>
+                    <ul class="disease-list">
+                        <li>Common Rust</li>
+                        <li>Gray Leaf Spot</li>
+                        <li>Northern Leaf Blight</li>
+                        <li>Healthy Crop Detection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="crop-service-card">
+                    <img src="https://i.ibb.co/F4R4frfR/generated-image-1.png" 
+                         alt="Sugarcane" class="crop-service-image">
+                    <h4>Sugarcane</h4>
+                    <ul class="disease-list">
+                        <li>Bacterial Blight</li>
+                        <li>Red Rot</li>
+                        <li>Healthy Crop Detection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6">
+                <div class="crop-service-card">
+                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Potato" class="crop-service-image">
+                    <h4>Potato</h4>
+                    <ul class="disease-list">
+                        <li>Early Blight</li>
+                        <li>Late Blight</li>
+                        <li>Healthy Crop Detection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-3">Ready to Protect Your Crops?</h2>
+                <p class="lead mb-0">Start using AgriAid today and experience the power of AI in agriculture.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{{ url_for('predict_page') }}" class="btn btn-success btn-lg px-5">
+                    <i class="fas fa-camera me-2"></i>Start Detection
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}Disease Detection - AgriAid{% endblock %}
+
+{% block content %}
+<section class="predict-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="prediction-card">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold mb-3">Crop Disease Detection</h2>
+                        <p class="lead text-muted">
+                            Upload a clear image of your crop to get instant disease diagnosis and treatment recommendations.
+                        </p>
+                    </div>
+
+                    <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data" id="predictionForm">
+                        <!-- Crop Selection -->
+                        <div class="mb-4">
+                            <label for="crop" class="form-label h5">
+                                <i class="fas fa-seedling me-2 text-success"></i>Select Your Crop
+                            </label>
+                            <select class="form-select form-select-lg" id="crop" name="crop" required>
+                                <option value="">Choose your crop...</option>
+                                {% for crop_id, crop_info in crops.items() %}
+                                <option value="{{ crop_id }}">{{ crop_info.display_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Image Upload -->
+                        <div class="mb-4">
+                            <label for="file" class="form-label h5">
+                                <i class="fas fa-camera me-2 text-success"></i>Upload Plant Image
+                            </label>
+                            <div class="upload-area" id="uploadArea">
+                                <input type="file" class="form-control" id="file" name="file" accept="image/*" required style="display: none;">
+                                <div class="upload-content" id="uploadContent">
+                                    <i class="fas fa-cloud-upload-alt fa-3x text-success mb-3"></i>
+                                    <h5>Drag & Drop Image Here</h5>
+                                    <p class="text-muted">Or click to browse files</p>
+                                    <button type="button" class="btn btn-outline-success" onclick="document.getElementById('file').click()">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="image-preview" id="imagePreview" style="display: none;">
+                                    <img id="previewImg" src="" alt="Preview" class="preview-image">
+                                    <div class="preview-overlay">
+                                        <button type="button" class="btn btn-sm btn-danger" onclick="removeImage()">
+                                            <i class="fas fa-times"></i> Remove
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-text">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Upload a clear image of the affected leaf or plant part. Supported formats: JPG, PNG, JPEG (Max 16MB)
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg" id="submitBtn">
+                                <i class="fas fa-search me-2"></i>Detect Disease
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Loading Animation -->
+                    <div id="loadingSpinner" class="text-center mt-4" style="display: none;">
+                        <div class="spinner-border text-success" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Analyzing...</span>
+                        </div>
+                        <h5 class="mt-3">Analyzing your crop image...</h5>
+                        <p class="text-muted">Please wait while our AI processes the image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="tips-section">
+                    <h4 class="text-center mb-4">
+                        <i class="fas fa-lightbulb text-warning me-2"></i>Tips for Better Results
+                    </h4>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="tip-card">
+                                <i class="fas fa-camera fa-2x text-success mb-2"></i>
+                                <h6>Clear Image</h6>
+                                <p>Take a well-lit, focused image of the affected area</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="tip-card">
+                                <i class="fas fa-eye fa-2x text-success mb-2"></i>
+                                <h6>Close-up View</h6>
+                                <p>Capture close-up shots showing disease symptoms clearly</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="tip-card">
+                                <i class="fas fa-sun fa-2x text-success mb-2"></i>
+                                <h6>Good Lighting</h6>
+                                <p>Use natural daylight for best image quality</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="tip-card">
+                                <i class="fas fa-leaf fa-2x text-success mb-2"></i>
+                                <h6>Single Leaf</h6>
+                                <p>Focus on one affected leaf or plant part at a time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// Image upload handling
+document.getElementById('file').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('previewImg').src = e.target.result;
+            document.getElementById('uploadContent').style.display = 'none';
+            document.getElementById('imagePreview').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Remove image function
+function removeImage() {
+    document.getElementById('file').value = '';
+    document.getElementById('uploadContent').style.display = 'block';
+    document.getElementById('imagePreview').style.display = 'none';
+}
+
+// Drag and drop functionality
+const uploadArea = document.getElementById('uploadArea');
+const fileInput = document.getElementById('file');
+
+uploadArea.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    uploadArea.classList.add('drag-over');
+});
+
+uploadArea.addEventListener('dragleave', function(e) {
+    e.preventDefault();
+    uploadArea.classList.remove('drag-over');
+});
+
+uploadArea.addEventListener('drop', function(e) {
+    e.preventDefault();
+    uploadArea.classList.remove('drag-over');
+
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+        fileInput.files = files;
+        fileInput.dispatchEvent(new Event('change'));
+    }
+});
+
+uploadArea.addEventListener('click', function() {
+    fileInput.click();
+});
+
+// Form submission handling
+document.getElementById('predictionForm').addEventListener('submit', function() {
+    document.getElementById('loadingSpinner').style.display = 'block';
+    document.getElementById('submitBtn').disabled = true;
+});
+</script>
+{% endblock %}

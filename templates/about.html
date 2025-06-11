@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - AgriAid{% endblock %}
+
+{% block content %}
+<section class="about-hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">About AgriAid</h1>
+                <p class="lead mb-4">
+                    Revolutionizing agriculture through artificial intelligence, we're dedicated to empowering farmers 
+                    with cutting-edge technology for better crop management and higher yields.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     alt="Modern Agriculture" class="img-fluid rounded-3 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mission-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h4>Our Mission</h4>
+                    <p>To democratize access to advanced agricultural technology, helping farmers across India protect their crops and maximize yields through AI-powered disease detection.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>Our Vision</h4>
+                    <p>A future where every farmer has access to intelligent crop monitoring tools, leading to sustainable agriculture and food security for generations to come.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Our Values</h4>
+                    <p>Innovation, accessibility, sustainability, and unwavering commitment to supporting the farming community that feeds our nation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="technology-section py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">Our Technology</h2>
+                <p class="lead text-muted">
+                    Built on state-of-the-art machine learning algorithms and trained on extensive agricultural datasets.
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="tech-feature">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h4>Deep Learning Models</h4>
+                        <p>Our ResNet50-based architecture achieves 98.4% accuracy in disease detection, trained on thousands of crop images from Indian agricultural conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="tech-feature">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h4>Comprehensive Database</h4>
+                        <p>Extensive disease database with organic and chemical treatment solutions, prevention methods, and crop-specific recommendations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="tech-feature">
+                    <div class="tech-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h4>Mobile-First Design</h4>
+                        <p>Responsive web application that works seamlessly on smartphones, tablets, and computers, designed for rural connectivity conditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="tech-feature">
+                    <div class="tech-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h4>Cloud Infrastructure</h4>
+                        <p>Scalable cloud-based processing ensures fast response times and reliable service availability for farmers across India.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="impact-section py-5 bg-success text-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12 mb-5">
+                <h2 class="display-5 fw-bold mb-3">Our Impact</h2>
+                <p class="lead">Making a real difference in Indian agriculture</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-stat">
+                    <h3 class="display-4 fw-bold">98.4%</h3>
+                    <p class="h5">Detection Accuracy</p>
+                    <p>Achieved through rigorous testing and validation on diverse crop datasets</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-stat">
+                    <h3 class="display-4 fw-bold">100+</h3>
+                    <p class="h5">Farmers Supported</p>
+                    <p>Helping farmers across different states improve their crop management</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-stat">
+                    <h3 class="display-4 fw-bold">85%</h3>
+                    <p class="h5">Yield Improvement</p>
+                    <p>Average increase in crop yields through early disease detection</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="impact-stat">
+                    <h3 class="display-4 fw-bold">5</h3>
+                    <p class="h5">Major Crops</p>
+                    <p>Comprehensive coverage of India's most important agricultural crops</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

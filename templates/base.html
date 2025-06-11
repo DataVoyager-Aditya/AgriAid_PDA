@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AgriAid - Smart Crop Disease Detection{% endblock %}</title>
+
+    <meta name="description" content="AgriAid is a smart AI-powered crop disease detection platform for farmers across India.">
+    <meta name="keywords" content="crop disease detection, smart farming, agriculture AI, wheat rust, rice blast, AgriAid, Indian farmers">
+    <meta name="author" content="AgriAid Team">
+    <meta name="robots" content="index, follow">
+    <!-- Social sharing (Open Graph) -->
+    <meta property="og:title" content="AgriAid - Smart Crop Disease Detection">
+    <meta property="og:description" content="Revolutionizing Indian agriculture with real-time crop disease prediction using AI.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/preview.jpg') }}">
+    <meta property="og:url" content="https://agriaid.tech">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AgriAid - Smart Crop Disease Detection">
+    <meta name="twitter:description" content="AI-based platform for accurate and early crop disease detection in India.">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/preview.jpg') }}">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AgriAid",
+        "url": "https://agriaid.tech",
+        "logo": "https://agriaid.tech/static/images/logo.png",
+        "sameAs": [
+            "https://www.linkedin.com/company/agriaid"
+        ],
+        "description": "AgriAid uses artificial intelligence to detect crop diseases for Indian farmers.",
+        "founder": {
+            "@type": "Person",
+            "name": "Aditya Raj Thakur"
+        }
+        }
+    </script>
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="canonical" href="https://agriaid.tech">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+                <img src="https://i.ibb.co/M0g5Th7/Whats-App-Image-2025-06-10-at-12-41-57.jpg"" alt="Healthy Crops" class="img-fluid rounded shadow" style="height: 40px; width: auto;">
+                <span class="ms-2 fw-bold fs-5">AgriAid</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('services') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('predict_page') }}">Detect Disease</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container mt-5 pt-4">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://i.ibb.co/M0g5Th7/Whats-App-Image-2025-06-10-at-12-41-57.jpg"" alt="Healthy Crops" class="img-fluid rounded shadow" style="height: 40px; width: auto;">
+                    <span class="ms-2 fw-bold fs-5">AgriAid</span>
+                    <p>Empowering farmers with AI-powered crop disease detection and treatment solutions.</p>
+                    <div class="social-links">
+                        <a href="mailto:aditya.rajthakur@agriaid.tech" class="text-white"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/company/agriaid" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <br>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('home') }}" class="text-white-50">Home</a></li>
+                        <li><a href="{{ url_for('about') }}" class="text-white-50">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}" class="text-white-50">Services</a></li>
+                        <li><a href="{{ url_for('predict_page') }}" class="text-white-50">Disease Detection</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Info</h5>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt me-2"></i>New Delhi, India<br>
+                        <i class="fas fa-phone me-2"></i>+91 82879 61834<br>
+                        <i class="fas fa-envelope me-2"></i>aditya.rajthakur@agriaid.tech
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 AgriAid. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for Indian Farmers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

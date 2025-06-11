@@ -1,0 +1,325 @@
+{
+    "sugarcane": {
+        "classes": [
+            "Bacterial Blight",
+            "Healthy",
+            "Red Rot"
+        ],
+        "diseases": {
+            "Bacterial Blight": {
+                "description": "Water-soaked streaks on leaves that turn reddish-brown, bacterial ooze visible in morning hours",
+                "organic_solutions": [
+                    "Use resistant sugarcane varieties when available",
+                    "Apply copper-based bactericides (copper sulfate)",
+                    "Maintain proper field drainage to reduce humidity",
+                    "Remove infected plant debris and volunteer plants",
+                    "Use biological control agents like Pseudomonas"
+                ],
+                "chemical_solutions": [
+                    "Streptomycin sulfate spray @ 200 ppm",
+                    "Copper oxychloride 50% WP @ 3g/liter",
+                    "Bactericide application during early infection stages",
+                    "Systemic acquired resistance inducers"
+                ],
+                "prevention": [
+                    "Use certified disease-free planting material",
+                    "Avoid injury to plants during cultivation",
+                    "Control insect vectors that spread bacteria",
+                    "Maintain balanced nutrition - avoid excess nitrogen",
+                    "Practice field sanitation and tool disinfection"
+                ]
+            },
+            "Red Rot": {
+                "description": "Leaf color changes from green to orange then yellow, red internal tissues with white patches and cross-banding",
+                "organic_solutions": [
+                    "Use resistant varieties available in your region",
+                    "Hot water treatment of setts at 50\u00b0C for 2 hours",
+                    "Apply Trichoderma-based biocontrol agents",
+                    "Maintain proper field sanitation and tool cleaning",
+                    "Incorporate organic matter to improve soil health"
+                ],
+                "chemical_solutions": [
+                    "Carbendazim 500g/ha for soil treatment",
+                    "Mancozeb 2000g/ha application",
+                    "Seed sett treatment with Bavistin before planting",
+                    "Systemic fungicide application as preventive measure"
+                ],
+                "prevention": [
+                    "Use disease-free certified planting material only",
+                    "Avoid waterlogging - ensure proper field drainage",
+                    "Clean and disinfect cultivation tools regularly",
+                    "Remove and destroy infected plants immediately",
+                    "Implement crop rotation with non-host crops"
+                ]
+            }
+        }
+    },
+    "wheat": {
+        "classes": [
+            "Wheat___Brown_Rust",
+            "Wheat___Healthy",
+            "Wheat___Yellow_Rust"
+        ],
+        "diseases": {
+            "Wheat___Brown_Rust": {
+                "description": "Small, circular to oval, orange to reddish-brown pustules on leaves, also known as Leaf Rust",
+                "organic_solutions": [
+                    "Plant resistant varieties like Kalyanasona, Sonalika, Choti Lerma",
+                    "Apply sulfur 15 kg/ha at 15-day intervals",
+                    "Balanced application of nitrogen fertilizers",
+                    "Eradicate self-sown wheat plants and weed hosts",
+                    "Use copper-based organic fungicides"
+                ],
+                "chemical_solutions": [
+                    "Seed treatment with Plantavax @ 0.1%",
+                    "Propiconazole 25% EC: 200-250 ml/acre",
+                    "Two sprays with Plantavax @ 0.1%",
+                    "Tebuconazole + Cyproconazole combination spray"
+                ],
+                "prevention": [
+                    "Avoid late sowing - adjust sowing time appropriately",
+                    "Implement crop rotation with non-host crops",
+                    "Destroy volunteer wheat plants in community effort",
+                    "Use certified disease-free seeds",
+                    "Maintain proper field drainage"
+                ]
+            },
+            "Wheat___Yellow_Rust": {
+                "description": "Yellow-orange stripe pustules arranged in lines parallel to leaf veins, also called Stripe Rust",
+                "organic_solutions": [
+                    "Plant resistant wheat varieties adapted to local conditions",
+                    "Apply balanced nutrition especially potash fertilizers",
+                    "Use sulfur-based treatments for disease suppression",
+                    "Remove infected crop residues and volunteer plants",
+                    "Maintain proper field sanitation practices"
+                ],
+                "chemical_solutions": [
+                    "Propiconazole 25% EC @ 200-250 ml/acre",
+                    "Tebuconazole 10% + Sulphur 65% WG @ 2g/liter",
+                    "Fungicide seed treatment before planting",
+                    "Foliar spray with systemic fungicides during infection"
+                ],
+                "prevention": [
+                    "Monitor weather conditions - avoid high humidity periods",
+                    "Use resistant cultivars available for your region",
+                    "Implement proper crop rotation practices",
+                    "Scout fields regularly for early detection",
+                    "Avoid excessive nitrogen application"
+                ]
+            }
+        }
+    },
+    "rice": {
+        "classes": [
+            "Rice___Brown_Spot",
+            "Rice___Healthy",
+            "Rice___Leaf_Blast",
+            "Rice___Neck_Blast"
+        ],
+        "diseases": {
+            "Rice___Brown_Spot": {
+                "description": "Small brown oval spots with yellow halos on leaves, grain discoloration and poor grain filling",
+                "organic_solutions": [
+                    "Apply balanced fertilization especially potassium",
+                    "Use silicon amendment to strengthen plant cells",
+                    "Implement crop rotation with non-rice crops",
+                    "Apply organic matter to improve soil health",
+                    "Use resistant rice varieties when available"
+                ],
+                "chemical_solutions": [
+                    "Propiconazole 25% EC: 200-250 ml/acre",
+                    "Hexaconazole 5% SC: 250 ml/acre",
+                    "Trifloxystrobin + Propiconazole combination",
+                    "Seed treatment with systemic fungicide"
+                ],
+                "prevention": [
+                    "Use certified disease-free seeds",
+                    "Maintain proper water management - avoid stress",
+                    "Apply balanced nutrition avoiding nutrient deficiency",
+                    "Practice field sanitation and residue management",
+                    "Monitor and control for optimal plant spacing"
+                ]
+            },
+            "Rice___Leaf_Blast": {
+                "description": "Diamond-shaped lesions with gray centers and dark borders on leaves, reducing photosynthetic area",
+                "organic_solutions": [
+                    "Apply silicon to strengthen plant cell walls",
+                    "Use balanced nutrition with proper nitrogen management",
+                    "Plant blast-resistant rice varieties",
+                    "Apply Trichoderma-based biocontrol agents",
+                    "Maintain proper field drainage"
+                ],
+                "chemical_solutions": [
+                    "Edifenphos 500 ml/ha application",
+                    "Carbendazim 500 g/ha spray",
+                    "Tricyclazole 75% WP @ 200g/acre",
+                    "Iprobenphos (IBP) @ 500 ml/ha"
+                ],
+                "prevention": [
+                    "Avoid excessive nitrogen fertilization",
+                    "Maintain proper water management",
+                    "Ensure adequate plant spacing for air circulation",
+                    "Remove infected plant debris after harvest",
+                    "Use resistant varieties adapted to local conditions"
+                ]
+            },
+            "Rice___Neck_Blast": {
+                "description": "Grayish-brown lesions on neck portion of panicles, causing neck rot and panicle breakage",
+                "organic_solutions": [
+                    "Apply silicon fertilizers to strengthen stems",
+                    "Use resistant varieties with strong neck resistance",
+                    "Maintain balanced nutrition avoiding excess nitrogen",
+                    "Apply biocontrol agents like Bacillus subtilis",
+                    "Ensure proper field drainage and air circulation"
+                ],
+                "chemical_solutions": [
+                    "Tricyclazole 75% WP @ 200g/acre at booting stage",
+                    "Carbendazim + Mancozeb combination spray",
+                    "Azoxystrobin 23% SC application",
+                    "Preventive fungicide spray at panicle initiation"
+                ],
+                "prevention": [
+                    "Plant resistant varieties with neck blast resistance",
+                    "Time fungicide application at panicle emergence",
+                    "Avoid late-season nitrogen application",
+                    "Maintain proper plant spacing",
+                    "Monitor weather for favorable blast conditions"
+                ]
+            }
+        }
+    },
+    "corn": {
+        "classes": [
+            "Corn___Common_Rust",
+            "Corn___Gray_Leaf_Spot",
+            "Corn___Healthy",
+            "Corn___Northern_Leaf_Blight"
+        ],
+        "diseases": {
+            "Corn___Common_Rust": {
+                "description": "Small reddish-brown pustules scattered on both sides of corn leaves, reducing photosynthesis",
+                "organic_solutions": [
+                    "Plant resistant corn varieties/hybrids",
+                    "Apply balanced nutrition with adequate potassium",
+                    "Implement early planting to avoid peak infection",
+                    "Use copper-based organic fungicides",
+                    "Maintain proper plant spacing for air circulation"
+                ],
+                "chemical_solutions": [
+                    "Mancozeb 75% WP applications",
+                    "Propiconazole 25% EC sprays",
+                    "Azoxystrobin-based treatments",
+                    "Preventive fungicide applications"
+                ],
+                "prevention": [
+                    "Use resistant corn hybrids available locally",
+                    "Ensure proper plant nutrition and soil health",
+                    "Conduct regular field monitoring for early detection",
+                    "Avoid dense planting - maintain adequate spacing",
+                    "Practice crop rotation with non-host crops"
+                ]
+            },
+            "Corn___Gray_Leaf_Spot": {
+                "description": "Rectangular gray-brown lesions parallel to leaf veins, can cause significant yield loss",
+                "organic_solutions": [
+                    "Use tillage practices to bury infected crop residue",
+                    "Implement crop rotation with non-corn crops",
+                    "Plant resistant corn varieties when available",
+                    "Apply organic matter to improve soil health",
+                    "Maintain proper field drainage"
+                ],
+                "chemical_solutions": [
+                    "Strobilurin fungicides (Azoxystrobin)",
+                    "Triazole fungicides (Propiconazole)",
+                    "Preventive spraying during early infection",
+                    "Combination fungicides for better control"
+                ],
+                "prevention": [
+                    "Practice effective residue management",
+                    "Rotate with non-host crops (soybean, wheat)",
+                    "Select resistant hybrid varieties",
+                    "Monitor weather conditions favoring disease",
+                    "Avoid continuous corn cultivation"
+                ]
+            },
+            "Corn___Northern_Leaf_Blight": {
+                "description": "Long elliptical gray-green lesions on corn leaves, can spread rapidly under favorable conditions",
+                "organic_solutions": [
+                    "Rotate crops with non-host plants",
+                    "Use resistant hybrid corn varieties",
+                    "Manage crop residue through tillage or decomposition",
+                    "Apply balanced fertilization avoiding excess nitrogen",
+                    "Maintain proper plant spacing"
+                ],
+                "chemical_solutions": [
+                    "Mancozeb 1000g/ha applications",
+                    "Azoxystrobin-based fungicide treatments",
+                    "Propiconazole sprays during early infection",
+                    "Preventive fungicide programs"
+                ],
+                "prevention": [
+                    "Plant resistant corn hybrids",
+                    "Implement 2-3 year crop rotation",
+                    "Ensure proper plant spacing for air circulation",
+                    "Remove or bury crop residue after harvest",
+                    "Scout fields regularly during vulnerable stages"
+                ]
+            }
+        }
+    },
+    "potato": {
+        "classes": [
+            "Potato___Early_Blight",
+            "Potato___Healthy",
+            "Potato___Late_Blight"
+        ],
+        "diseases": {
+            "Potato___Early_Blight": {
+                "description": "Circular brown spots with concentric rings (target spots) on leaves, can affect tubers causing dark lesions",
+                "organic_solutions": [
+                    "Rotate crops with non-solanaceous plants",
+                    "Apply organic mulching to reduce soil splash",
+                    "Use copper-based organic fungicides",
+                    "Apply neem-based treatments regularly",
+                    "Maintain proper plant nutrition with compost"
+                ],
+                "chemical_solutions": [
+                    "Mancozeb 0.2% spray applications",
+                    "Chlorothalonil fungicide treatments",
+                    "Azoxystrobin + Difenoconazole combination",
+                    "Alternating fungicide modes of action"
+                ],
+                "prevention": [
+                    "Use certified disease-free seed tubers",
+                    "Maintain proper plant spacing for air circulation",
+                    "Avoid overhead irrigation - use drip irrigation",
+                    "Practice field sanitation and debris removal",
+                    "Implement crop rotation with cereals or legumes"
+                ]
+            },
+            "Potato___Late_Blight": {
+                "description": "Dark water-soaked lesions on leaves with white mold on undersides, can destroy entire crop rapidly",
+                "organic_solutions": [
+                    "Apply copper sulfate sprays preventively",
+                    "Use late blight resistant potato varieties",
+                    "Ensure proper field drainage to reduce humidity",
+                    "Remove and destroy infected plants immediately",
+                    "Apply Bacillus-based biocontrol agents"
+                ],
+                "chemical_solutions": [
+                    "Metalaxyl-M + Mancozeb combination",
+                    "Dimethomorph + Mancozeb applications",
+                    "Cymoxanil + Famoxadone treatments",
+                    "Systemic and contact fungicide rotation"
+                ],
+                "prevention": [
+                    "Monitor weather conditions - high humidity alerts",
+                    "Plant resistant potato varieties when available",
+                    "Ensure proper ventilation in crop canopy",
+                    "Apply preventive fungicide sprays before infection",
+                    "Use disease forecasting systems for timing"
+                ]
+            }
+        }
+    }
+}
