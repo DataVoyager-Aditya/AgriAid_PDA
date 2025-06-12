@@ -11,12 +11,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-app = Flask(__name__, 
-            template_folder='../templates',  # Point to root templates
-            static_folder='../static')       # Point to root static
+app = Flask(__name__)
 app.secret_key = 'agriaid_secret_key_2025'
-app.config['UPLOAD_FOLDER'] = '../uploads'  # Adjusted for Vercel folder structure
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+  # 16MB max file size
 
 # Ensure upload directory exists
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
