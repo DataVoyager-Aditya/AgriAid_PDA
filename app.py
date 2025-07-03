@@ -318,6 +318,6 @@ def sitemap():
 
 
 if __name__ == '__main__':
-    print(f"🚀 Starting AgriAid server with {len(models_dict)} models loaded...")
-    app.run(debug=True, host='0.0.0.0', port=5000)
-
+    port = int(os.environ.get('PORT', 8080))  # Fallback to 8080 if PORT is not set
+    print(f"🚀 Starting AgriAid server on port {port}...")
+    app.run(debug=False, host='0.0.0.0', port=port)
