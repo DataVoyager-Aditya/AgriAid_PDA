@@ -1,7 +1,7 @@
 # PyTorch CPU wheels
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.7.1+cpu
-torchvision==0.18.1+cpu
+torchvision==0.22.1+cpu
 
 # Core ML/data processing
 numpy<2.0
