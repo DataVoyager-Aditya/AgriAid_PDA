@@ -319,7 +319,5 @@ def sitemap():
 
 if __name__ == '__main__':
     print(f"🚀 Starting AgriAid server with {len(models_dict)} models loaded...")
-    import os
-    port = int(os.environ.get('PORT', 8080))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=5000)
 
