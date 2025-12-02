@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Disease Detection Results - AgriAid{% endblock %}
+{% block title %}{{ t['result_title'] }} - AgriAid{% endblock %}
 
 {% block content %}
 <section class="result-section py-5">
@@ -8,13 +8,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <!-- Result Header -->
-                <div class="result-header text-center mb-5">
-                    <h2 class="display-5 fw-bold mb-3">Disease Detection Results</h2>
-                    <p class="lead">{{ crop }} Analysis Complete</p>
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">{{ t['analysis_complete'] }}</h2>
                 </div>
 
-                <!-- Prediction Result -->
-                <div class="prediction-result mb-5">
+                <!-- Result Status -->
+                <div class="result-status mb-5">
                     {% if 'Healthy' in prediction %}
                     <div class="alert alert-success result-alert">
                         <div class="row align-items-center">
@@ -22,8 +21,8 @@
                                 <i class="fas fa-check-circle fa-3x"></i>
                             </div>
                             <div class="col">
-                                <h4 class="mb-2">Great News! Your {{ crop }} is Healthy</h4>
-                                <p class="mb-0">No disease detected. Continue with your current farming practices and monitor regularly for any changes.</p>
+                                <h4 class="mb-2">{{ t['healthy_title'] }}</h4>
+                                <p class="mb-0">{{ t['healthy_desc'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -34,8 +33,8 @@
                                 <i class="fas fa-exclamation-triangle fa-3x"></i>
                             </div>
                             <div class="col">
-                                <h4 class="mb-2">Disease Detected: {{ prediction }}</h4>
-                                <p class="mb-0">We've identified a potential disease in your {{ crop }}. Please review the treatment recommendations below.</p>
+                                <h4 class="mb-2">{{ t['disease_detected'] }}: {{ prediction }}</h4>
+                                <p class="mb-0">{{ t['disease_desc'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -48,15 +47,15 @@
                     <!-- Disease Description -->
                     <div class="info-card mb-4">
                         <h5 class="text-danger mb-3">
-                            <i class="fas fa-info-circle me-2"></i>Disease Information
+                            <i class="fas fa-info-circle me-2"></i>{{ t['disease_info'] }}
                         </h5>
-                        <p class="lead">{{ disease_info.description }}</p>
+                        <p class="lead">{{ t[disease_info.description] }}</p>
                     </div>
 
                     <!-- Treatment Options -->
                     <div class="treatment-options">
                         <h5 class="mb-4">
-                            <i class="fas fa-prescription-bottle-alt me-2 text-success"></i>Treatment Recommendations
+                            <i class="fas fa-prescription-bottle-alt me-2 text-success"></i>{{ t['treatment_recs'] }}
                         </h5>
 
                         <div class="row g-4">
@@ -65,13 +64,13 @@
                                 <div class="treatment-card organic-card h-100">
                                     <div class="card-header">
                                         <h6 class="mb-0">
-                                            <i class="fas fa-leaf me-2"></i>Organic Solutions
+                                            <i class="fas fa-leaf me-2"></i>{{ t['organic_sol'] }}
                                         </h6>
                                     </div>
                                     <div class="card-body">
                                         <ul class="treatment-list">
                                             {% for solution in disease_info.organic_solutions %}
-                                            <li><i class="fas fa-check text-success me-2"></i>{{ solution }}</li>
+                                            <li><i class="fas fa-check text-success me-2"></i>{{ t[solution] }}</li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -83,13 +82,13 @@
                                 <div class="treatment-card chemical-card h-100">
                                     <div class="card-header">
                                         <h6 class="mb-0">
-                                            <i class="fas fa-flask me-2"></i>Chemical Solutions
+                                            <i class="fas fa-flask me-2"></i>{{ t['chemical_sol'] }}
                                         </h6>
                                     </div>
                                     <div class="card-body">
                                         <ul class="treatment-list">
                                             {% for solution in disease_info.chemical_solutions %}
-                                            <li><i class="fas fa-check text-warning me-2"></i>{{ solution }}</li>
+                                            <li><i class="fas fa-check text-warning me-2"></i>{{ t[solution] }}</li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -101,13 +100,13 @@
                                 <div class="treatment-card prevention-card h-100">
                                     <div class="card-header">
                                         <h6 class="mb-0">
-                                            <i class="fas fa-shield-alt me-2"></i>Prevention Methods
+                                            <i class="fas fa-shield-alt me-2"></i>{{ t['prevention'] }}
                                         </h6>
                                     </div>
                                     <div class="card-body">
                                         <ul class="treatment-list">
                                             {% for prevention in disease_info.prevention %}
-                                            <li><i class="fas fa-check text-info me-2"></i>{{ prevention }}</li>
+                                            <li><i class="fas fa-check text-info me-2"></i>{{ t[prevention] }}</li>
                                             {% endfor %}
                                         </ul>
                                     </div>
@@ -118,10 +117,9 @@
 
                     <!-- Important Note -->
                     <div class="alert alert-info mt-4">
-                        <h6><i class="fas fa-exclamation-circle me-2"></i>Important Note</h6>
+                        <h6><i class="fas fa-exclamation-circle me-2"></i>{{ t['important_note'] }}</h6>
                         <p class="mb-0">
-                            For best results, consult with your local agricultural extension officer before applying any treatment. 
-                            Always follow the recommended dosages and safety guidelines when using chemical solutions.
+                            {{ t['note_desc'] }}
                         </p>
                     </div>
                 </div>
@@ -130,10 +128,10 @@
                 <!-- Action Buttons -->
                 <div class="action-buttons text-center mt-5">
                     <a href="{{ url_for('predict_page') }}" class="btn btn-success btn-lg me-3">
-                        <i class="fas fa-camera me-2"></i>Analyze Another Image
+                        <i class="fas fa-camera me-2"></i>{{ t['analyze_another'] }}
                     </a>
                     <a href="{{ url_for('contact') }}" class="btn btn-outline-success btn-lg">
-                        <i class="fas fa-question-circle me-2"></i>Need Help?
+                        <i class="fas fa-question-circle me-2"></i>{{ t['need_help'] }}
                     </a>
                 </div>
             </div>

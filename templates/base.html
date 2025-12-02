@@ -66,24 +66,37 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                        <a class="nav-link" href="{{ url_for('home') }}">{{ t['nav_home'] }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                        <a class="nav-link" href="{{ url_for('about') }}">{{ t['nav_about'] }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('services') }}">Services</a>
+                        <a class="nav-link" href="{{ url_for('services') }}">{{ t['nav_services'] }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('predict_page') }}">Detect Disease</a>
+                        <a class="nav-link" href="{{ url_for('predict_page') }}">{{ t['nav_detect'] }}</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <!-- <a class="nav-link" href="{{ url_for('testimonials') }}">Testimonials</a> -->
-                    <!-- </li> --> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                        <a class="nav-link" href="{{ url_for('testimonials') }}">{{ t['nav_testimonials'] }}</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">{{ t['nav_contact'] }}</a>
+                    </li>
+                    <!-- Language Selector -->
+                    <li class="nav-item dropdown ms-2">
+                        <a class="nav-link dropdown-toggle btn btn-outline-light btn-sm" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i> {{ current_lang|upper }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item {% if current_lang == 'en' %}active{% endif %}" href="{{ url_for('set_language', lang='en') }}">English</a></li>
+                            <li><a class="dropdown-item {% if current_lang == 'hi' %}active{% endif %}" href="{{ url_for('set_language', lang='hi') }}">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item {% if current_lang == 'bn' %}active{% endif %}" href="{{ url_for('set_language', lang='bn') }}">বাংলা (Bengali)</a></li>
+                            <li><a class="dropdown-item {% if current_lang == 'mr' %}active{% endif %}" href="{{ url_for('set_language', lang='mr') }}">मराठी (Marathi)</a></li>
+                            <li><a class="dropdown-item {% if current_lang == 'ta' %}active{% endif %}" href="{{ url_for('set_language', lang='ta') }}">தமிழ் (Tamil)</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -116,7 +129,7 @@
                 <div class="col-md-4">
                     <img src="https://i.ibb.co/M0g5Th7/Whats-App-Image-2025-06-10-at-12-41-57.jpg"" alt="Healthy Crops" class="img-fluid rounded shadow" style="height: 40px; width: auto;">
                     <span class="ms-2 fw-bold fs-5">AgriAid</span>
-                    <p>Empowering farmers with AI-powered crop disease detection and treatment solutions.</p>
+                    <p>{{ t['footer_desc'] }}</p>
                     <div class="social-links">
                         <a href="mailto:aditya.rajthakur@agriaid.tech" class="text-white"><i class="fas fa-envelope"></i></a>
                         <a href="https://www.linkedin.com/company/agriaid" class="text-white"><i class="fab fa-linkedin-in"></i></a>
@@ -125,17 +138,17 @@
                 </div>
                 
                 <div class="col-md-4">
-                    <h5>Quick Links</h5>
+                    <h5>{{ t['quick_links'] }}</h5>
                     <ul class="list-unstyled">
-                        <li><a href="{{ url_for('home') }}" class="text-white-50">Home</a></li>
-                        <li><a href="{{ url_for('about') }}" class="text-white-50">About Us</a></li>
-                        <li><a href="{{ url_for('services') }}" class="text-white-50">Services</a></li>
-                        <li><a href="{{ url_for('predict_page') }}" class="text-white-50">Disease Detection</a></li>
-                        <li><a href="{{ url_for('contact') }}" class="text-white-50">Contact</a></li>
+                        <li><a href="{{ url_for('home') }}" class="text-white-50">{{ t['nav_home'] }}</a></li>
+                        <li><a href="{{ url_for('about') }}" class="text-white-50">{{ t['nav_about'] }}</a></li>
+                        <li><a href="{{ url_for('services') }}" class="text-white-50">{{ t['nav_services'] }}</a></li>
+                        <li><a href="{{ url_for('predict_page') }}" class="text-white-50">{{ t['nav_detect'] }}</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="text-white-50">{{ t['nav_contact'] }}</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5>Contact Info</h5>
+                    <h5>{{ t['contact_info'] }}</h5>
                     <p class="text-white-50">
                         <i class="fas fa-map-marker-alt me-2"></i>New Delhi, India<br>
                         <i class="fas fa-phone me-2"></i>+91 82879 61834<br>
@@ -146,10 +159,10 @@
             <hr class="my-4">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 AgriAid. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025 AgriAid. {{ t['rights_reserved'] }}</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for Indian Farmers</p>
+                    <p class="mb-0">{{ t['made_with_love'] }} <i class="fas fa-heart text-danger"></i> {{ t['for_farmers'] }}</p>
                 </div>
             </div>
         </div>

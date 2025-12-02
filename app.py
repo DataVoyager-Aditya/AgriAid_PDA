@@ -16,6 +16,29 @@ app.secret_key = 'agriaid_secret_key_2025'
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
+# Load translations
+try:
+    with open('translations.json', 'r', encoding='utf-8') as f:
+        translations = json.load(f)
+except Exception as e:
+    print(f"Error loading translations: {e}")
+    translations = {}
+
+@app.route('/set_language/<lang>')
+def set_language(lang):
+    if lang in translations:
+        from flask import session
+        session['lang'] = lang
+    return redirect(request.referrer or url_for('home'))
+
+@app.context_processor
+def inject_translations():
+    from flask import session
+    lang = session.get('lang', 'en')
+    return dict(t=translations.get(lang, translations['en']), current_lang=lang)
+app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+
 # Ensure upload directory exists
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
@@ -145,7 +168,7 @@ def predict_disease(crop, image_path):
 # Routes
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', crops=CROP_INFO)
 
 @app.route('/about')
 def about():
@@ -320,4 +343,4 @@ def sitemap():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))  # Fallback to 8080 if PORT is not set
     print(f"🚀 Starting AgriAid server on port {port}...")
-    app.run(debug=False, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=port)

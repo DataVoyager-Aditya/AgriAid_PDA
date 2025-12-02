@@ -32,6 +32,5 @@ EXPOSE 8080
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Command to start Flask app
-# Flask will auto-detect app.py
-CMD ["python", "app.py"]
+# Command to start Flask app with Gunicorn
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
